@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Pelito Feliz</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial Black, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #460808;
+      color: #333;
+    }
+    
+
+
+
+    /* Header */
+    
+    header {
+  text-align: center;
+  padding: 40px;
+  background: url('banner.jpg') no-repeat center center; /* Ruta de la imagen */
+  background-size: auto; /* Muestra la imagen con su tamaño real */
+  background-color: #1b1b1b;
+  color: #fff;
+  height: auto; /* Ajusta la altura automáticamente según el tamaño de la imagen */
+}
+
+
+
+
+    header h1 {
+      font-size: 60px;
+      color: #ee0000;
+      font-family: 'Impact', sans-serif;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #ddd;
+    }
+
+    /* Navigation Bar */
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+      text-align: center;
+    }
+
+    .topnav a {
+  display: inline-block;
+  color: #fff;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+    .topnav {
+  background-color: #3b0000;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.topnav a {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+    .topnav a:hover {
+      background-color: #ee0000;
+      color: #fff;
+    }
+
+    /* Layout */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .leftcolumn {
+      flex: 3;
+    }
+
+    .rightcolumn {
+      flex: 1;
+      padding: 20px;
+      background-color: #e6e6e6;
+      margin-left: 20px;
+      border-radius: 8px;
+    }
+
+    .rightcolumn .card {
+      background-color: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      color: #333;
+    }
+    .rightcolumn .card {
+  background: #ffebcc;
+  border: 2px dashed #ee0000;
+}
+
+    .rightcolumn h3 {
+      color: #ee0000;
+    }
+
+    /* Card */
+    .card {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .card h2 {
+      color: #333;
+    }
+
+    /* Form */
+    .form-container {
+      padding: 20px;
+      background-color: #1b1b1b;
+      border-radius: 8px;
+      color: #fff;
+    }
+
+    .form-container label,
+    .form-container button {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+      color: #ddd;
+    }
+ /* Galería de imágenes */
+ .service-gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+      gap: 20px; /* Espaciado entre imágenes */
+      margin-top: 15px;
+    }
+    .service-gallery img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    /* Estilo para las imágenes */
+    .service-gallery img {
+      width: 350px; /* Ancho fijo */
+      height: 350px; /* Alto fijo */
+      object-fit: cover; /* Recorta las imágenes si es necesario */
+      border-radius: 8px; /* Bordes redondeados */
+      border: 1px solid #ddd; /* Borde ligero */
+      margin: 0 auto; /* Centra la imagen */
+    }
+    .form-container button {
+  background: linear-gradient(45deg, #ee0000, #bb0000);
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 0.3s;
+}
+
+.form-container button:hover {
+  transform: translateY(-3px);
+}
+
+    .form-container input,
+    .form-container select,
+    .form-container button {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+    footer .social-icons {
+      margin: 10px 0;
+    }
+
+    footer .social-icons a {
+      display: inline-block;
+      margin: 0 10px;
+      color: #ddd;
+      font-size: 20px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer .social-icons a:hover {
+      color: #ee0000;
+    }
+
+    .form-container button {
+  background: linear-gradient(45deg, #ee0000, #bb0000);
+  border: none;
+  padding: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 0.3s;
+}
+
+.form-container button:hover {
+  transform: translateY(-3px);
+}
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1b1b1b;
+      color: #ddd;
+    }
+
+    /* Media Query */
+    @media (max-width: 800px) {
+      .row {
+        flex-direction: column;
+      }
+
+      .rightcolumn {
+        margin-left: 0;
+      }
+    }
+    @media (max-width: 600px) {
+      .service-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Mantiene dos columnas */
+  gap: 20px; /* Espaciado entre imágenes */
+  margin-top: 15px; /* Margen superior */
+  padding: 20px; /* Añade espacio interior para que las imágenes no toquen el borde */
+  background-color: #333; /* Cambia el fondo detrás de las imágenes */
+  border-radius: 8px; /* Bordes redondeados para suavizar el diseño */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para más profundidad */
+}
+
+
+  .service-gallery img {
+  width: 350px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 8px solid #ee0000; /* Borde rojo para contraste */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* Sombra más fuerte */
+}
+
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1>El Pelito Feliz</h1>
+    <p>Donde cada corte cuenta una historia</p>
+  </header>
+
+
+  <!-- Navigation -->
+  <div class="topnav">
+    <a href="#historia">Inicio</a>
+    <a href="#servicios">Nuestros Servicios</a>
+    <a href="#agendar">Agendar Cita</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="row">
+    <!-- Main Column -->
+    <div class="leftcolumn">
+      <!-- Historia -->
+      <div class="card" id="historia">
+        <h2>Nuestra Historia</h2>
+        <p>En el corazón de un pequeño pueblo lleno de encanto, allá por 1995, nació El Pelito Feliz. Su fundador, don Felipe Pérez, un apasionado barbero de toda la vida, soñaba con crear un lugar donde el cuidado del cabello no solo fuera una necesidad, sino una experiencia. Inspirado por los relatos que había escuchado de su abuelo, quien también fue barbero, don Felipe quiso rendir homenaje a la tradición, pero con un toque moderno que atrajera a personas de todas las edades.
+
+          Desde el principio, El Pelito Feliz no fue solo una barbería; se convirtió en un punto de encuentro para amigos, vecinos y familias. Era el lugar donde los niños se sentaban nerviosos por su primer corte, los adolescentes experimentaban con nuevos estilos, y los adultos compartían historias mientras disfrutaban de un café recién preparado. Todo esto sucedía bajo la mirada atenta de don Felipe, quien decía con una sonrisa: “Un buen corte puede cambiar tu día, pero un gran corte puede cambiar tu vida”.
+          
+          El nombre El Pelito Feliz no fue una casualidad. Don Felipe siempre creía que un cabello bien cuidado reflejaba felicidad y confianza. 
+          
+         </p>
+      </div>
+
+      <!-- Sección Servicios -->
+    
+<div class="card" id="servicios">
+  <h2>Nuestros Servicios</h2>
+
+  <!-- Servicio: Corte Corto -->
+  <div class="service">
+    <h3>Corte Corto</h3>
+    <div class="service-gallery">
+      <img src="images/corte-corto1.jpg" alt="Corte Corto 1">
+      <img src="images/corte-corto2.jpg" alt="Corte Corto 2">
+      <img src="images/corte-corto3.jpg" alt="Corte Corto 3">
+      <img src="images/corte-corto4.jpg" alt="Corte Corto 4">
+    </div>
+    <p>Estilo práctico y moderno.</p>
+  </div>
+
+  <!-- Servicio: Corte Mediano -->
+  <div class="service">
+    <h3>Corte Mediano</h3>
+    <div class="service-gallery">
+      <img src="images/corte-mediano1.jpg" alt="Corte Mediano 1">
+      <img src="images/corte-mediano2.jpg" alt="Corte Mediano 2">
+      <img src="images/corte-mediano3.jpg" alt="Corte Mediano 3">
+      <img src="images/corte-mediano4.jpg" alt="Corte Mediano 4">
+    </div>
+    <p>Versatilidad y elegancia.</p>
+  </div>
+
+  <!-- Servicio: Corte Largo -->
+  <div class="service">
+    <h3>Corte Largo</h3>
+    <div class="service-gallery">
+      <img src="images/corte-largo1.jpg" alt="Corte Largo 1">
+      <img src="images/corte-largo2.jpg" alt="Corte Largo 2">
+      <img src="images/corte-largo3.jpg" alt="Corte Largo 3">
+      <img src="images/corte-largo4.jpg" alt="Corte Largo 4">
+    </div>
+    <p>Para destacar tu estilo único.</p>
+  </div>
+
+  <!-- Servicio: Corte y Barba -->
+  <div class="service">
+    <h3>Corte y Barba / Solo Barba</h3>
+    <div class="service-gallery">
+      <img src="images/corte-barba1.jpg" alt="Corte y Barba 1">
+      <img src="images/corte-barba2.jpg" alt="Corte y Barba 2">
+      <img src="images/corte-barba3.jpg" alt="Corte y Barba 3">
+      <img src="images/corte-barba4.jpg" alt="Corte y Barba 4">
+    </div>
+    <p>Cuida tu barba con estilo.</p>
+  </div>
+</div>
+
+
+      <!-- Formulario -->
+      <div class="form-container" id="agendar">
+        <h2>Agendar Cita</h2>
+        <form>
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+          <label for="service">Servicio:</label>
+          <select id="service" name="service" required>
+            <option value="corte-corto">Corte Corto</option>
+            <option value="corte-mediano">Corte Mediano</option>
+            <option value="corte-largo">Corte Largo</option>
+            <option value="corte-barba">Corte y Barba</option>
+            <option value="solo-barba">Solo Barba</option>
+          </select>
+          <label for="date">Fecha:</label>
+          <input type="date" id="date" name="date" required>
+          <button type="submit">Agendar</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="rightcolumn">
+      <div class="card">
+        <h3>Promociones</h3>
+
+        <p>¡Corte + Barba con 20% de descuento los martes!</p>
+        <!-- Icono fijo al costado -->
+<div class="side-icon">
+  <img src="images/tu-icono.jpg" alt="Ícono lateral">
+</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 El Pelito Feliz. Todos los derechos reservados.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    
+  </footer>
+</body>
+
+</html>
