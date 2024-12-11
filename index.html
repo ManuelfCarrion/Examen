@@ -157,11 +157,15 @@
     }
  /* Galería de imágenes */
  .service-gallery {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-      gap: 20px; /* Espaciado entre imágenes */
-      margin-top: 15px;
-    }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Mantiene dos columnas */
+  gap: 20px; /* Espaciado entre imágenes */
+  margin-top: 15px; /* Margen superior */
+  padding: 20px; /* Añade espacio interior para que las imágenes no toquen el borde */
+  background-color: #333; /* Cambia el fondo detrás de las imágenes */
+  border-radius: 8px; /* Bordes redondeados para suavizar el diseño */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para más profundidad */
+}
     .service-gallery img:hover {
   transform: scale(1.1);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
