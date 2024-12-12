@@ -152,11 +152,27 @@
 
     /* Form */
     .form-container {
-      padding: 20px;
-      background-color: #1b1b1b;
-      border-radius: 8px;
-      color: #fff;
-    }
+  padding: 20px;
+  background-color: #1b1b1b;
+  border-radius: 8px;
+  color: #fff;
+  display: flex; /* Activa un contenedor flexible */
+  flex-direction: column; /* Apila los elementos en una columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+}
+.form-container #date {
+  margin-left: 25px; /* Desplaza el campo hacia la derecha */
+}
+
+.form-container label,
+.form-container input,
+.form-container select,
+.form-container button {
+  width: auto; /* Ajusta automáticamente el ancho de los campos */
+  margin-bottom: 15px; /* Espaciado entre los campos */
+  text-align: center; /* Asegura que el texto dentro de los campos esté centrado */
+}
+
 
     .form-container label,
     .form-container button {
