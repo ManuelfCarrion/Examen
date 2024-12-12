@@ -64,23 +64,33 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-    .topnav {
+    /* Barra de navegación responsiva */
+.topnav {
   background-color: #3b0000;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* Permite que los enlaces se apilen */
   padding: 10px 0;
 }
-.topnav {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+
 .topnav a {
   padding: 10px 15px;
-  margin: 0 5px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  margin: 5px 0; /* Agrega margen vertical para separar enlaces en dispositivos móviles */
+  width: auto; /* Deja que el ancho sea automático */
+  text-align: center;
 }
+
+@media (max-width: 600px) {
+  .topnav {
+    flex-direction: column; /* Apila los enlaces en una columna */
+  }
+
+  .topnav a {
+    width: 100%; /* Asegura que los enlaces ocupen todo el ancho */
+    margin: 5px 0; /* Agrega separación vertical */
+  }
+}
+
 
     .topnav a:hover {
       background-color: #ee0000;
@@ -359,7 +369,30 @@
       <img src="images/corte-barba4.jpg" alt="Corte y Barba 4">
     </div>
     <p>Cuida tu barba con estilo.</p>
+  </div><!-- Servicio: Tratamiento Capilar -->
+  <div class="service card">
+    <h3>Tratamiento Capilar</h3>
+    <div class="service-gallery">
+      <img src="images/tratamiento1.jpg" alt="Tratamiento Capilar 1" loading="lazy">
+      <img src="images/tratamiento2.jpg" alt="Tratamiento Capilar 2" loading="lazy">
+      <img src="images/tratamiento3.jpg" alt="Tratamiento Capilar 3" loading="lazy">
+      <img src="images/tratamiento4.jpg" alt="Tratamiento Capilar 4" loading="lazy">
+    </div>
+    <p>Cuida y fortalece tu cabello con nuestros tratamientos especializados.</p>
   </div>
+  
+  <!-- Servicio: Servicios de Coloración -->
+  <div class="service card">
+    <h3>Servicios de Coloración</h3>
+    <div class="service-gallery">
+      <img src="images/coloracion1.jpg" alt="Coloración 1" loading="lazy">
+      <img src="images/coloracion2.jpg" alt="Coloración 2" loading="lazy">
+      <img src="images/coloracion3.jpg" alt="Coloración 3" loading="lazy">
+      <img src="images/coloracion4.jpg" alt="Coloración 4" loading="lazy">
+    </div>
+    <p>Transforma tu look con nuestros servicios de coloración profesional.</p>
+  </div>
+  
 </div>
 
 
@@ -376,9 +409,15 @@
             <option value="corte-largo">Corte Largo</option>
             <option value="corte-barba">Corte y Barba</option>
             <option value="solo-barba">Solo Barba</option>
+            <option value="Tratamiento Capilar">Tratamiento capilar</option>
+            <option value="Servicio de Coloracion">Servicio de coloracion</option>
           </select>
+          <label for="phone">Número de Teléfono:</label>
+          <input type="tel" id="phone" name="phone" placeholder="Tu número de teléfono" required pattern="[0-9]{10}" title="Introduce un número de 10 dígitos">
+
           <label for="date">Fecha:</label>
           <input type="date" id="date" name="date" required>
+          
           <button type="submit">Agendar</button>
         </form>
       </div>
@@ -388,14 +427,45 @@
     <div class="rightcolumn">
       <div class="card">
         <h3>Promociones</h3>
-
         <p>¡Corte + Barba con 20% de descuento los martes!</p>
-        <!-- Icono fijo al costado -->
-<div class="side-icon">
-  <img src="images/tu-icono.jpg" alt="Ícono lateral">
-</div>
+        <div class="side-icon">
+          <img src="images/tu-icono.jpg" alt="Ícono lateral">
+        </div>
       </div>
+    
+      <!-- Presentación del Personal -->
+      <div class="card">
+        <h3>Nuestro Personal</h3>
+    
+        <!-- Miembro: Barbero -->
+        <div class="staff-member">
+          <img src="images/barbero.jpg" alt="Foto de un barbero" class="staff-photo">
+          <p><strong>Juan Pérez</strong><br>Experto en cortes clásicos y modernos. Más de 10 años creando estilos únicos.</p>
+        </div>
+    
+        <!-- Miembro: Especialista en Coloración -->
+        <div class="staff-member">
+          <img src="images/colorista.jpg" alt="Foto de una especialista en coloración" class="staff-photo">
+          <p><strong>María Gómez</strong><br>Especialista en tratamientos capilares y tintes. Tu cabello en las mejores manos.</p>
+        </div>
+      </div>
+      <!-- Publicidad Falsa -->
+         <div class="card">
+        <h3>Somos lo mejor</h3>
+          <img src="images/publicidad.jpg" alt="Publicidad de la barbería" class="advert-photo">
+          <p>¡Aprovecha nuestras promociones exclusivas! Todo lo que imaginas para tu cabello, aquí.</p>
+       </div>
+
+         <!-- Ubicación -->
+        <div class="card">
+        <h3>Ubicación</h3>
+          <p>Nos encontramos en el centro de la ciudad, a pocos pasos del parque principal:</p>
+          <p><strong>Dirección:</strong> Calle Pelito 123, Ciudad Feliz.</p>
+          <img src="images/maps.jpg" alt="Mapa de la ubicación" class="maps-photo">
+       </div>
+
     </div>
+    
   </div>
 
   <!-- Footer -->
@@ -412,6 +482,27 @@
       <a href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
     </div>
 </footer>
+<script>
+  // Selecciona el formulario
+  const form = document.querySelector('#agendar form');
+
+  // Escucha el evento de envío
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Evita que la página se recargue al enviar
+
+    // Obtiene los valores ingresados
+    const name = document.querySelector('#name').value;
+    const service = document.querySelector('#service').value;
+    const date = document.querySelector('#date').value;
+    const phone = document.querySelector('#phone').value;
+
+    // Muestra la ventana de confirmación
+    alert(`¡Gracias, ${name}! Tu cita para el servicio de "${service}" ha sido agendada para el ${date}. Te contactaremos al número: ${phone}.`);
+
+    // Opcional: Limpia el formulario después de enviar
+    form.reset();
+  });
+</script>
 
 </body>
 
